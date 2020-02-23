@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{141C24B7-5FFD-40BB-9655-EE6D5C25EE18}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>University_Student_Management</RootNamespace>
+    <AssemblyName>University Student Management</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.18\Assemblies\v4.5.2\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.18\Assemblies\v4.5.2\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.18\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.18\Assemblies\v4.5.2\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQL.Data.EntityFrameworkCore, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.18\Assemblies\v4.5.2\MySQL.Data.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQL.Data.EntityFrameworkCore.Design, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.18\Assemblies\v4.5.2\MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.18\Assemblies\v4.5.2\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.18\Assemblies\v4.5.2\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SshNet.Security.Cryptography, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.18\Assemblies\v4.5.2\SshNet.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\frmAboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmAboutUs.Designer.cs">
+      <DependentUpon>frmAboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmAdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmAdminLogin.Designer.cs">
+      <DependentUpon>frmAdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmAdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmAdminMain.Designer.cs">
+      <DependentUpon>frmAdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmPresentCourse.Designer.cs">
+      <DependentUpon>frmPresentCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmPreviousCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmPreviousCourse.Designer.cs">
+      <DependentUpon>frmPreviousCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmRegStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmRegStudent.Designer.cs">
+      <DependentUpon>frmRegStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmRoutine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmRoutine.Designer.cs">
+      <DependentUpon>frmRoutine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmStudentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmStudentList.Designer.cs">
+      <DependentUpon>frmStudentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmStudentLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmStudentLogin.Designer.cs">
+      <DependentUpon>frmStudentLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmStudentMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmStudentMain.Designer.cs">
+      <DependentUpon>frmStudentMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmSummery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmSummery.Designer.cs">
+      <DependentUpon>frmSummery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmTeacherLIst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmTeacherLIst.Designer.cs">
+      <DependentUpon>frmTeacherLIst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmTeacherLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmTeacherLogin.Designer.cs">
+      <DependentUpon>frmTeacherLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmRegTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmRegTeacher.Designer.cs">
+      <DependentUpon>frmRegTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmTeacherMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmTeacherMain.Designer.cs">
+      <DependentUpon>frmTeacherMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmPresentCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmUpdate.Designer.cs">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Templates\frmTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Templates\frmTemplates.Designer.cs">
+      <DependentUpon>frmTemplates.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Screens\frmAboutUs.resx">
+      <DependentUpon>frmAboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmAdminLogin.resx">
+      <DependentUpon>frmAdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmAdminMain.resx">
+      <DependentUpon>frmAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmPreviousCourse.resx">
+      <DependentUpon>frmPreviousCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmRegStudent.resx">
+      <DependentUpon>frmRegStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmRegTeacher.resx">
+      <DependentUpon>frmRegTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmRoutine.resx">
+      <DependentUpon>frmRoutine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmStudentList.resx">
+      <DependentUpon>frmStudentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmStudentLogin.resx">
+      <DependentUpon>frmStudentLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmStudentMain.resx">
+      <DependentUpon>frmStudentMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmSummery.resx">
+      <DependentUpon>frmSummery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmTeacherLIst.resx">
+      <DependentUpon>frmTeacherLIst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmTeacherLogin.resx">
+      <DependentUpon>frmTeacherLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmPresentCourse.resx">
+      <DependentUpon>frmPresentCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmTeacherMain.resx">
+      <DependentUpon>frmTeacherMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmUpdate.resx">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Templates\frmTemplates.resx">
+      <DependentUpon>frmTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher 21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher 3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3337a63dea4754bb76eea7b268550a52.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02062c358f3d67ed0dcc4a61c072e570.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cfaeb82f60b3b1be1a1ceb3f130823f6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\38e5c1e948524ada4f56d8260f19703b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Routine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\summary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\present course.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous course.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Routine pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fd14ce42ed04a3de7159f425be256816.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\annex icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\annex2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b5ca34c1b0d5917f1475e85510f16d74.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2dddd3b0a398437baa22bd846929c19f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\86ab703fa28d2afe5358060db3b8c4c1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8b75d7c976730a4cb7759bb482696cff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %2851%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\86ab703fa28d2afe5358060db3b8c4c11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20200111_153723.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Me.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tusher.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rosney.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sabbir.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,5 @@
+University Management System c# :
+
+-------->>Cut or copy MyDB Folder------->>Paste to This PC->Local Disk(C:)>User
+follow this video for setup [Give User Folder Full Controll]
+https://www.youtube.com/watch?v=iJjS0aFXAZc
