@@ -173,9 +173,9 @@
             // 
             this.textBoxStudentPass.Location = new System.Drawing.Point(270, 358);
             this.textBoxStudentPass.Name = "textBoxStudentPass";
+            this.textBoxStudentPass.PasswordChar = '*';
             this.textBoxStudentPass.Size = new System.Drawing.Size(303, 30);
             this.textBoxStudentPass.TabIndex = 13;
-            this.textBoxStudentPass.UseSystemPasswordChar = true;
             // 
             // btnStudentRegCancle
             // 
@@ -184,7 +184,7 @@
             this.btnStudentRegCancle.Location = new System.Drawing.Point(270, 470);
             this.btnStudentRegCancle.Name = "btnStudentRegCancle";
             this.btnStudentRegCancle.Size = new System.Drawing.Size(94, 40);
-            this.btnStudentRegCancle.TabIndex = 14;
+            this.btnStudentRegCancle.TabIndex = 15;
             this.btnStudentRegCancle.Text = "Cancel";
             this.btnStudentRegCancle.UseVisualStyleBackColor = false;
             this.btnStudentRegCancle.Click += new System.EventHandler(this.btnStudentRegCancle_Click);
@@ -196,7 +196,7 @@
             this.btnStudentRegSubmit.Location = new System.Drawing.Point(479, 470);
             this.btnStudentRegSubmit.Name = "btnStudentRegSubmit";
             this.btnStudentRegSubmit.Size = new System.Drawing.Size(94, 40);
-            this.btnStudentRegSubmit.TabIndex = 15;
+            this.btnStudentRegSubmit.TabIndex = 14;
             this.btnStudentRegSubmit.Text = "Submit";
             this.btnStudentRegSubmit.UseVisualStyleBackColor = false;
             this.btnStudentRegSubmit.Click += new System.EventHandler(this.btnStudentRegSubmit_Click);
@@ -205,9 +205,9 @@
             // 
             this.textBoxStudentConfirmPass.Location = new System.Drawing.Point(270, 412);
             this.textBoxStudentConfirmPass.Name = "textBoxStudentConfirmPass";
+            this.textBoxStudentConfirmPass.PasswordChar = '*';
             this.textBoxStudentConfirmPass.Size = new System.Drawing.Size(303, 30);
-            this.textBoxStudentConfirmPass.TabIndex = 35;
-            this.textBoxStudentConfirmPass.UseSystemPasswordChar = true;
+            this.textBoxStudentConfirmPass.TabIndex = 14;
             // 
             // label8
             // 
@@ -288,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 981);
+            this.ClientSize = new System.Drawing.Size(1000, 981);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -297,6 +297,8 @@
             this.Text = "Student Registration Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRegStudent_Load);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -304,6 +306,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

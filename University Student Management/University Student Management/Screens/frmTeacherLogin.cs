@@ -30,20 +30,15 @@ namespace University_Student_Management.Screens
 
         private void btnTeacherLogin_Click(object sender, EventArgs e)
         {
-          
+            string pass = textBoxTeacherPass.Text;
+            int len = pass.Length;
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MyDB\MyDB.mdf;Integrated Security=True;Connect Timeout=30");
             string query = "Select * from Teacher where ID='" + textBoxTeacherID.Text.Trim() + "' and Password ='" + textBoxTeacherPass.Text.Trim() + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            if (table.Rows.Count == 1)
-            {
-                TeacherID =textBoxTeacherID.Text;
-                frmTeacherMain frm = new frmTeacherMain(TeacherID);
-                this.Hide();
-                frm.Show();
-            }
-            else if (textBoxTeacherID.Text.Trim() == string.Empty)
+           
+            if (textBoxTeacherID.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Teacher ID is Required  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxTeacherID.Clear();
@@ -57,11 +52,23 @@ namespace University_Student_Management.Screens
                 textBoxTeacherPass.Focus();
 
             }
+            else if(len<8)
+            {
+                MessageBox.Show("Password Must Be 8 Digit");
+            }
+            else if (table.Rows.Count == 1)
+            {
+                TeacherID = textBoxTeacherID.Text;
+                frmTeacherMain frm = new frmTeacherMain(TeacherID);
+                this.Hide();
+                frm.Show();
+            }
 
             else
             {
                 MessageBox.Show("Teacher ID or Password is Invalid  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btnCancle_Click(object sender, EventArgs e)

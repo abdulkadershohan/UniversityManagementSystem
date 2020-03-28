@@ -51,9 +51,9 @@
             // 
             this.textBoxAdminPass.Location = new System.Drawing.Point(468, 130);
             this.textBoxAdminPass.Name = "textBoxAdminPass";
+            this.textBoxAdminPass.PasswordChar = '*';
             this.textBoxAdminPass.Size = new System.Drawing.Size(185, 30);
             this.textBoxAdminPass.TabIndex = 25;
-            this.textBoxAdminPass.UseSystemPasswordChar = true;
             // 
             // textBoxAdminID
             // 
@@ -186,6 +186,8 @@
             this.Text = "Admin Login Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmAdminLogin_Load);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -194,6 +196,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

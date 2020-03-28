@@ -35,20 +35,17 @@ namespace University_Student_Management.Screens
 
         private void btnStudentLogin_Click(object sender, EventArgs e)
         {
-        
+            string id = textBoxStudentID.Text;
+            int lenID = id.Length;
+            string pass = textBoxStudentPass.Text;
+            int lenpass = pass.Length;
             SqlConnection con= new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MyDB\MyDB.mdf;Integrated Security=True;Connect Timeout=30");
             string query = "Select * from Student where ID='"+textBoxStudentID.Text.Trim()+"' and Password ='"+textBoxStudentPass.Text.Trim()+"'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            if (table.Rows.Count == 1)
-            {
-                StudentId = textBoxStudentID.Text;
-                frmStudentMain frm = new frmStudentMain(StudentId);
-                this.Hide();
-                frm.Show();
-            }
-            else if (textBoxStudentID.Text.Trim() == string.Empty)
+           
+             if (textBoxStudentID.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Student ID is Required  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxStudentID.Clear();
@@ -62,7 +59,22 @@ namespace University_Student_Management.Screens
                     textBoxStudentPass.Focus();
 
                 }
-        
+            else if(lenID<11 ||lenID>11)
+            {
+                MessageBox.Show("Ivalid Student ID");
+            }
+            else if(lenpass<8)
+            {
+                MessageBox.Show("Password Must Be 8 Digit");
+            }
+           else if (table.Rows.Count == 1)
+            {
+                StudentId = textBoxStudentID.Text;
+                frmStudentMain frm = new frmStudentMain(StudentId);
+                this.Hide();
+                frm.Show();
+            }
+
             else
             {
                 MessageBox.Show("Student ID or Password is Invalid  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

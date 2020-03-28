@@ -74,9 +74,9 @@
             // 
             this.textBoxTeacherPass.Location = new System.Drawing.Point(478, 162);
             this.textBoxTeacherPass.Name = "textBoxTeacherPass";
+            this.textBoxTeacherPass.PasswordChar = '*';
             this.textBoxTeacherPass.Size = new System.Drawing.Size(185, 30);
             this.textBoxTeacherPass.TabIndex = 12;
-            this.textBoxTeacherPass.UseSystemPasswordChar = true;
             // 
             // textBoxTeacherID
             // 
@@ -195,6 +195,8 @@
             this.Text = "Teachers Login Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTeacherLogin_Load);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -203,6 +205,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

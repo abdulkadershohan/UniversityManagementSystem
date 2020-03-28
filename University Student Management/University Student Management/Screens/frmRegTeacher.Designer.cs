@@ -62,7 +62,7 @@
             this.btnTeacherRegSubmit.Location = new System.Drawing.Point(445, 460);
             this.btnTeacherRegSubmit.Name = "btnTeacherRegSubmit";
             this.btnTeacherRegSubmit.Size = new System.Drawing.Size(94, 40);
-            this.btnTeacherRegSubmit.TabIndex = 31;
+            this.btnTeacherRegSubmit.TabIndex = 8;
             this.btnTeacherRegSubmit.Text = "Submit";
             this.btnTeacherRegSubmit.UseVisualStyleBackColor = false;
             this.btnTeacherRegSubmit.Click += new System.EventHandler(this.btnTeacherRegSubmit_Click);
@@ -74,7 +74,7 @@
             this.btnTeacherRegCancle.Location = new System.Drawing.Point(235, 460);
             this.btnTeacherRegCancle.Name = "btnTeacherRegCancle";
             this.btnTeacherRegCancle.Size = new System.Drawing.Size(94, 40);
-            this.btnTeacherRegCancle.TabIndex = 30;
+            this.btnTeacherRegCancle.TabIndex = 9;
             this.btnTeacherRegCancle.Text = "Cancel";
             this.btnTeacherRegCancle.UseVisualStyleBackColor = false;
             this.btnTeacherRegCancle.Click += new System.EventHandler(this.btnTeacherRegCancle_Click);
@@ -83,37 +83,37 @@
             // 
             this.textBoxTeacherPass.Location = new System.Drawing.Point(235, 326);
             this.textBoxTeacherPass.Name = "textBoxTeacherPass";
+            this.textBoxTeacherPass.PasswordChar = '*';
             this.textBoxTeacherPass.Size = new System.Drawing.Size(303, 30);
-            this.textBoxTeacherPass.TabIndex = 29;
-            this.textBoxTeacherPass.UseSystemPasswordChar = true;
+            this.textBoxTeacherPass.TabIndex = 6;
             // 
             // textBoxTeacherEmail
             // 
             this.textBoxTeacherEmail.Location = new System.Drawing.Point(235, 273);
             this.textBoxTeacherEmail.Name = "textBoxTeacherEmail";
             this.textBoxTeacherEmail.Size = new System.Drawing.Size(303, 30);
-            this.textBoxTeacherEmail.TabIndex = 28;
+            this.textBoxTeacherEmail.TabIndex = 5;
             // 
             // textBoxTeacherPn
             // 
             this.textBoxTeacherPn.Location = new System.Drawing.Point(235, 217);
             this.textBoxTeacherPn.Name = "textBoxTeacherPn";
             this.textBoxTeacherPn.Size = new System.Drawing.Size(303, 30);
-            this.textBoxTeacherPn.TabIndex = 27;
+            this.textBoxTeacherPn.TabIndex = 4;
             // 
             // textBoxTeacherName
             // 
             this.textBoxTeacherName.Location = new System.Drawing.Point(235, 105);
             this.textBoxTeacherName.Name = "textBoxTeacherName";
             this.textBoxTeacherName.Size = new System.Drawing.Size(303, 30);
-            this.textBoxTeacherName.TabIndex = 24;
+            this.textBoxTeacherName.TabIndex = 2;
             // 
             // textBoxTeacherID
             // 
             this.textBoxTeacherID.Location = new System.Drawing.Point(235, 38);
             this.textBoxTeacherID.Name = "textBoxTeacherID";
             this.textBoxTeacherID.Size = new System.Drawing.Size(303, 30);
-            this.textBoxTeacherID.TabIndex = 23;
+            this.textBoxTeacherID.TabIndex = 1;
             // 
             // label7
             // 
@@ -169,9 +169,9 @@
             // 
             this.textBoxTeacherConfirmPass.Location = new System.Drawing.Point(235, 396);
             this.textBoxTeacherConfirmPass.Name = "textBoxTeacherConfirmPass";
+            this.textBoxTeacherConfirmPass.PasswordChar = '*';
             this.textBoxTeacherConfirmPass.Size = new System.Drawing.Size(303, 30);
-            this.textBoxTeacherConfirmPass.TabIndex = 33;
-            this.textBoxTeacherConfirmPass.UseSystemPasswordChar = true;
+            this.textBoxTeacherConfirmPass.TabIndex = 7;
             // 
             // label3
             // 
@@ -223,7 +223,7 @@
             this.textBoxDept.Location = new System.Drawing.Point(235, 160);
             this.textBoxDept.Name = "textBoxDept";
             this.textBoxDept.Size = new System.Drawing.Size(303, 30);
-            this.textBoxDept.TabIndex = 34;
+            this.textBoxDept.TabIndex = 3;
             // 
             // panel2
             // 
@@ -278,6 +278,8 @@
             this.Text = "Teachers Registration From";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRegTeacher_Load);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -285,6 +287,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -90,9 +90,9 @@
             // 
             this.textBoxStudentPass.Location = new System.Drawing.Point(478, 182);
             this.textBoxStudentPass.Name = "textBoxStudentPass";
+            this.textBoxStudentPass.PasswordChar = '*';
             this.textBoxStudentPass.Size = new System.Drawing.Size(185, 30);
             this.textBoxStudentPass.TabIndex = 4;
-            this.textBoxStudentPass.UseSystemPasswordChar = true;
             // 
             // btnStudentLogin
             // 
@@ -196,6 +196,8 @@
             this.Text = "Students Login Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmStudentLogin_Load);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -204,6 +206,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

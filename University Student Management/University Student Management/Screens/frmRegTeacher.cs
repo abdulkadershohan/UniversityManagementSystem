@@ -39,12 +39,26 @@ namespace University_Student_Management.Screens
             bool check = email.Contains("@") && email.Contains(".com");
             string pass = textBoxTeacherPass.Text;
             int passlen = pass.Length;
+            //
+
+            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MyDB\MyDB.mdf;Integrated Security=True;Connect Timeout=30");
+            string query = "Select * from Teacher where ID='" + textBoxTeacherID.Text.Trim() + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+
+            //
 
             try
             {
+                if (table.Rows.Count == 1)
+                {
+                    MessageBox.Show("You Have Already An Account");
+                }
 
 
-                if (textBoxDept.Text==string.Empty || textBoxTeacherID.Text == string.Empty || textBoxTeacherName.Text == string.Empty || textBoxTeacherEmail.Text == string.Empty || textBoxTeacherPn.Text == String.Empty || textBoxTeacherPass.Text == string.Empty)
+                else if (textBoxDept.Text==string.Empty || textBoxTeacherID.Text == string.Empty || textBoxTeacherName.Text == string.Empty || textBoxTeacherEmail.Text == string.Empty || textBoxTeacherPn.Text == String.Empty || textBoxTeacherPass.Text == string.Empty)
                 {
                     MessageBox.Show("Fill Up The Tegistration Form Properly");
                 }
@@ -92,7 +106,7 @@ namespace University_Student_Management.Screens
             }
             catch
             {
-                MessageBox.Show("You Have Already An Account");
+                MessageBox.Show("Database not found !");
             }
         }
         void Clear()

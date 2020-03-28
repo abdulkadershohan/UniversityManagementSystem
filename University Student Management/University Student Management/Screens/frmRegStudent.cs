@@ -41,11 +41,22 @@ namespace University_Student_Management.Screens
             bool check = email.Contains("@") && email.Contains(".com");
             string pass = textBoxStudentPass.Text;
             int passlen = pass.Length;
-   
-            try
-            {
+            
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MyDB\MyDB.mdf;Integrated Security=True;Connect Timeout=30");
+            string query = "Select * from Student where ID='" + textBoxStudentID.Text.Trim() + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
 
-                if (textBoxStudentID.Text == string.Empty || textBoxStudentName.Text == string.Empty || textBoxStudentEmail.Text == string.Empty || textBoxStudentPn.Text == String.Empty || textBoxStudentPass.Text == string.Empty || textBoxDept.Text == string.Empty || textBoxIntakeSec.Text == string.Empty)
+
+            try
+            {     
+                if (table.Rows.Count == 1)
+                {
+                    MessageBox.Show("You Have Already An Account");
+                }
+
+                else if (textBoxStudentID.Text == string.Empty || textBoxStudentName.Text == string.Empty || textBoxStudentEmail.Text == string.Empty || textBoxStudentPn.Text == String.Empty || textBoxStudentPass.Text == string.Empty || textBoxDept.Text == string.Empty || textBoxIntakeSec.Text == string.Empty)
                 {
                     MessageBox.Show("Fill Up The Tegistration Form Properly");
                 }
@@ -73,13 +84,13 @@ namespace University_Student_Management.Screens
                 {
                     MessageBox.Show("Password Must Be 8 Digit");
                 }
-
+             
                 else
                 {
-                    using (SqlConnection con = new SqlConnection(ConncetionString))
+                    using (SqlConnection conn = new SqlConnection(ConncetionString))
                     {
-                        con.Open();
-                        SqlCommand SqlCmd = new SqlCommand("StudentReg", con);
+                        conn.Open();
+                        SqlCommand SqlCmd = new SqlCommand("StudentReg", conn);
                         SqlCmd.CommandType = CommandType.StoredProcedure;
                         SqlCmd.Parameters.AddWithValue("@ID", textBoxStudentID.Text.Trim());
                         SqlCmd.Parameters.AddWithValue("@Name", textBoxStudentName.Text.Trim());
@@ -99,7 +110,7 @@ namespace University_Student_Management.Screens
             }
             catch
             {
-                MessageBox.Show("You Have Already An Account");
+                MessageBox.Show("Database not found !");
             }
         }
         void Clear()

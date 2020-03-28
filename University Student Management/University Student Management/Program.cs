@@ -21,7 +21,7 @@ namespace University_Student_Management
           
 
             Application.Run(new frmMain());
-            //test
+          
         }
     }
 }
